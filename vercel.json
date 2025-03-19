@@ -1,25 +1,29 @@
 {
-    "version" : 2,
+    "version": 2,
     "framework": null,
+    "functions": {
+        "api/index.php": { "runtime": "vercel-php@0.6.0" }
+    },
     "routes": [
         {
             "src": "/build/(.*)",
             "dest": "/public/build/$1"
         },
         {
-            "src": "/(.*\\.(?:css|png|jpg|jpeg|gif|svg|ico|ttf|woff|woff2|eot|ptf|webp|avif|txt))$",
+            "src": "/(.*\\.(?:css|js|png|jpg|jpeg|gif|svg|ico|ttf|woff|woff2|eot|otf|webp|avif|txt))$",
             "dest": "/public/$1"
         },
-        {"src": "/(.*)", "dest": "/api/index.php"}
+        { "src": "/(.*)", "dest": "/api/index.php" }
     ],
     "public": true,
     "buildCommand": "vite build",
     "outputDirectory": "public",
     "env": {
         "APP_ENV": "production",
-        "APP_TIMEZONE": "Asia/Phnom Penh",
+        "APP_TIMEZONE": "Asia/Jakarta",
         "APP_DEBUG": "false",
-        "APP_KEY": "https://yourproductionurl.com",
+        "APP_URL": "https://yourproductionurl.com",
+        "APP_KEY": "base64:JbbNC6IXjyMywh9yxPla8nffnzNOjeNWn3/wTnLEl00=",
         "APP_CONFIG_CACHE": "/tmp/config.php",
         "APP_EVENTS_CACHE": "/tmp/events.php",
         "APP_PACKAGES_CACHE": "/tmp/packages.php",
